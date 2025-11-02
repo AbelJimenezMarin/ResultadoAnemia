@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detección de Anemia</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🩸 Detección Temprana de Anemia - Herramienta Clínica</h1>
+        <p class="subtitle">Ingrese los valores del hemograma para el diagnóstico de anemia.</p>
+
+        <form id="anemiaForm">
+            <div class="input-group">
+                <label for="genero">Género:</label>
+                <select id="genero" required>
+                    <option value="" disabled selected>Seleccione el género...</option>
+                    <option value="0">Femenino</option>
+                    <option value="1">Masculino</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="hemoglobina">Hemoglobina (Hb) (g/dL):</label>
+                <input type="number" id="hemoglobina" step="0.1" min="1" max="25" required> Rango entre 6.6 a 16.9
+            </div>
+            
+            <div class="input-group">
+                <label for="mcv">VCM (Volumen Corpuscular Medio) (fL):</label>
+                <input type="number" id="mcv" step="0.1" min="50" max="150" required> Rango entre 50.0 a 101.6
+                
+            </div>
+
+            <div class="input-group">
+                <label for="mch">HCM (Hemoglobina Corpuscular Media) (pg):</label>
+                <input type="number" id="mch" step="0.1" min="15" max="50" required> Rango entre 15.0 y 30.0
+            </div>
+
+            <div class="input-group">
+                <label for="mchc">CHCM (Concentración de Hb Corp. Media) (g/dL):</label>
+                <input type="number" id="mchc" step="0.1" min="25" max="40" required> Rango entre 25.0 a 32.5
+            </div>
+            
+            <button type="submit">Diagnóstico</button>
+        </form>
+
+        <div id="resultado-container" class="resultado-box hidden">
+            <h2>Resultados del Análisis</h2>
+            <p id="resultado-mensaje"></p>
+            <div id="clasificacion-anemia"></div>
+        </div>
+
+        <div class="image-section">
+            <h3>Imágenes Clínicas Relacionadas</h3>
+            <p>Ejemplos de frotis sanguíneo que muestran diferentes morfologías de glóbulos rojos asociados a la anemia:</p>
+            <div class="image-gallery">
+                <div class="clinical-image">
+                    <span role="img" aria-label="Microcytic hypochromic red blood cells">🔬</span>
+                    <p>Anemia Microcítica Hipocrómica (Deficiencia de Hierro) </p>
+                </div>
+                <div class="clinical-image">
+                    <span role="img" aria-label="Macrocytic red blood cells with hypersegmented neutrophil">🔬</span>
+                    <p>Anemia Macrocítica (Deficiencia de B12/Folato) 
+
+[Image of Macrocytic red blood cells and hypersegmented neutrophil]
+</p>
+                </div>
+                <div class="clinical-image">
+                    <span role="img" aria-label="Normocytic normochromic red blood cells">🔬</span>
+                    <p>Anemia Normocítica (Enf. Crónica/Renal) </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
